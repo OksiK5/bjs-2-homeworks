@@ -1,8 +1,5 @@
 function compareArrays(arr1, arr2) {
-	if (arr1.length !== arr2.length) {
-		return false;
-	}
-    return arr1.every((element, index) => element === arr2[index]);
+	return arr1.length === arr2.length && arr1.every((item, index) => item === arr2[index]);
 }
 compareArrays([8, 9], [6]) // false, разные значения
 compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5]) // false, разные значения
@@ -13,9 +10,7 @@ compareArrays([1, 2], [1, 2, 3]) // false
 compareArrays([0, 1], [0, 1, 2]) // false
 
 function getUsersNamesInAgeRange(users, gender) {
-	const filteredUsers = users.filter(user => {
-		return user.gender === gender
-	});
+	const filteredUsers = users.filter(user => user.gender === gender);
 	const numOfUsers = filteredUsers.length;
 	if (numOfUsers === 0) {
 		return 0;
